@@ -54,7 +54,7 @@ const randomBtn = document.querySelector(".random-btn")
 let currentItem = 0
 
 window.addEventListener("DOMContentLoaded", function(){
-    showDetails(currentItem)
+    showDetails()
 })
 
 function showDetails (){
@@ -70,14 +70,19 @@ nextBtn.addEventListener("click", function(){
     if(currentItem > details.length -1){
         currentItem = 0
     }
-    showDetails(currentItem)
+    showDetails()
 })
 prevBtn.addEventListener("click", function(){
     currentItem--
     if(currentItem < 0){
         currentItem = details.length-1
     }
-    showDetails(currentItem)
+    showDetails()
+})
+
+randomBtn.addEventListener("click", function(){
+    currentItem = Math.floor(Math.random() * details.length)
+    showDetails()
 })
 
     
